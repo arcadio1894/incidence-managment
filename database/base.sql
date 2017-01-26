@@ -13,7 +13,6 @@ CREATE TABLE usuario (
 	enable char(1)
 );
 
-INSERT INTO usuario(fullname, username, email, password, type, created_at, enable) VALUES ('Jorge Gonzales', 'George', 'joryes1894@gmail.com', 'asd', 'Admin', '2016/10/18', '1');
 
 CREATE TABLE proyecto (
 	idProyecto int NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -24,7 +23,6 @@ CREATE TABLE proyecto (
 	description varchar(200),
 	enable char(1)
 );
-INSERT INTO proyecto(name, state, created_at, visibility, description, enable) VALUES ('Infraestructura de TI', 'Estable', '2016/10/18', 'Privado', 'Pryecto de prueba', '1');
 
 CREATE TABLE perfil (
 	idPerfil int NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -33,7 +31,6 @@ CREATE TABLE perfil (
 	created_at date,
 	enable char(1)
 );
-INSERT INTO perfil(name, nivel, created_at, enable) VALUES ('Manager', '90', '2016/10/18', '1');
 /*
 	INSERTS POSTERIORES
 	Manager 90-100
@@ -119,4 +116,28 @@ CREATE TABLE incidenciaAtendida (
 	PRIMARY KEY (idPerspectiva,ruc)
 );*/
 
+-- Seeders
+INSERT INTO usuario(fullname, username, email, password, type, created_at, enable) VALUES ('Jorge Gonzales', 'George', 'joryes1894@gmail.com', 'asd', 'Admin', '2016/10/18', '1');
+INSERT INTO usuario(fullname, username, email, password, type, created_at, enable) VALUES ('Juan Sanchez', 'Juan', 'juan@gmail.com', '123123', 'User', '2016/10/18', '1');
+INSERT INTO usuario(fullname, username, email, password, type, created_at, enable) VALUES ('Ana Castro', 'Ana', 'ana@gmail.com', '123123', 'User', '2016/10/18', '1');
+INSERT INTO usuario(fullname, username, email, password, type, created_at, enable) VALUES ('Luis Castillo', 'Luis', 'luis@gmail.com', '123123', 'User', '2016/10/18', '1');
+INSERT INTO usuario(fullname, username, email, password, type, created_at, enable) VALUES ('Carolina Urquiza', 'Carolina', 'carolina@gmail.com', '123123', 'User', '2016/10/18', '1');
+INSERT INTO usuario(fullname, username, email, password, type, created_at, enable) VALUES ('Jose Chavez', 'Jose', 'jose@gmail.com', '123123', 'externo', '2016/10/18', '1');
 
+INSERT INTO proyecto(name, state, created_at, visibility, description, enable) VALUES ('Infraestructura de TI', 'Estable', '2016/10/18', 'Privado', 'Proyecto de prueba', '1');
+INSERT INTO proyecto(name, state, created_at, visibility, description, enable) VALUES ('Mantenimiento de hardware', 'Estable', '2016/10/18', 'Privado', 'Proyecto de prueba', '1');
+
+INSERT INTO perfil(name, nivel, created_at, enable) VALUES ('Manager', '100', '2016/10/18', '1');
+INSERT INTO perfil(name, nivel, created_at, enable) VALUES ('Mesa de ayuda', '90', '2016/10/18', '1');
+INSERT INTO perfil(name, nivel, created_at, enable) VALUES ('Administrador', '80', '2016/10/18', '1');
+INSERT INTO perfil(name, nivel, created_at, enable) VALUES ('Tecnico', '60', '2016/10/18', '1');
+INSERT INTO perfil(name, nivel, created_at, enable) VALUES ('Operario', '40', '2016/10/18', '1');
+
+INSERT INTO categoria(name, idProyecto, created_at, enable) VALUES ('Redes y conexiones', '1', '2016/10/18', '1');
+INSERT INTO categoria(name, idProyecto, created_at, enable) VALUES ('Actualizacion de software', '1', '2016/10/18', '1');
+INSERT INTO categoria(name, idProyecto, created_at, enable) VALUES ('Equipos de cómputo', '2', '2016/10/18', '1');
+INSERT INTO categoria(name, idProyecto, created_at, enable) VALUES ('Routers y switches', '2', '2016/10/18', '1');
+
+INSERT INTO nivel(idCategoria, idPerfil, idUsuario, created_at, enable) VALUES ('1', '2', '2', '2016/10/18', '1');
+INSERT INTO nivel(idCategoria, idPerfil, idUsuario, created_at, enable) VALUES ('1', '3', '3', '2016/10/18', '1');
+INSERT INTO nivel(idCategoria, idPerfil, idUsuario, created_at, enable) VALUES ('1', '4', '4', '2016/10/18', '1');
